@@ -87,8 +87,6 @@ are not to be used for public health decisions or responses, or for any
 clinical application or as a substitute for medical advice or guidance.
 
 
-
-
 ## License
 
 The code is MIT licensed, as found in the [LICENSE file](LICENSE)
