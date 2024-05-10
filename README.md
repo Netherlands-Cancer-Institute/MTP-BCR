@@ -26,9 +26,11 @@ The heatmaps derived from our model may help clinicians better understand the
 progression from normal tissue to cancerous growth, enhancing interpretability 
 in breast cancer risk assessment.
 
-
-
+## Overview of study
 ![Graphical abstract](figures/graphical_abstract.png)
+
+## Model architecture
+![Model architecture](figures/model_architecture.png)
 
 ## Usage
 
@@ -50,10 +52,10 @@ conda activate py37
 ```bash
 python src/train.py \
   --method side_specific_4views_mtp_tumor \
-  --num-classes 16 \
-  --test-num-classes 11 \
+  --num-classes 16 \   #   leveraged the 15 years follow-up to train the risk model
+  --test-num-classes 11 \  #  test the model's performance of 10-year risk prediction
   --batch-size 8 \
-  --num_time_points 6 \
+  --num_time_points 6 \  # input 6 time point exams, for one current exams and five history exams
   --use_risk_factors \
   --multi_tasks \
   --pooling last_timestep \
@@ -63,7 +65,17 @@ python src/train.py \
 
 The configs above are meant to specify exact implementation details and our experimental procedure
 
+### Predicting on External Dataset
+```bash
+python custom_predict.py \
+    --path_risk_model $dir_pretrained_weigths \
+    --test_results_dir $dir_results
+```
 
+### Weights
+
+We are going to share the weights by to this link: 
+https://drive.google.com/drive/folders/1VFA1lvihPtTWlQVXbBr_Jot0ugZUZLXL?usp=sharing
 
 
 ## Disclaimer
