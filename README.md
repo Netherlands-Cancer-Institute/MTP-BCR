@@ -90,4 +90,4 @@ Links: [Netherlands Cancer Institute](https://www.nki.nl/),
 [Radboud University Medical Center](https://www.radboudumc.nl/en/patient-care) and 
 [Maastricht University](https://www.maastrichtuniversity.nl/nl)
 
-## Acknowledgements:
+[//]: # (## Acknowledgements:)
