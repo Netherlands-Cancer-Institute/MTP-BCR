@@ -1,10 +1,48 @@
 # MTP-BCR: Predicting long term breast cancer risk using longitudinal mammographic screening history
 
+Risk assessment of breast cancer (BC) seeks to enhance individualized screening and prevention strategies. 
+Recent deep learning (DL) risk models based on mammography have shown 
+superiority in short-term risk prediction compared to traditional risk factor-based models. 
+However, those models primarily rely on single-time exams and thus ignore the temporal changes 
+in breast tissues that can be extracted from sequence exams. 
+Here, we present the **Multi-Time Point Breast Cancer Risk Model (MTP-BCR)**, 
+a novel temporospatial DL risk model that integrates traditional BC risk factors 
+and longitudinal mammography data to identify subtle changes in breast 
+tissue indicative of future malignancy. Utilizing a large inhouse dataset 
+comprising risk factors and 171,168 mammograms involving 9,133 women, 
+we evaluate the performance of the MTP-BCR model in long-term risk prediction. 
+Our model demonstrates a significant improvement in 10-year risk prediction 
+with an area under the receiver operating characteristics (AUC) of 0.80, 
+outperforming the traditional BCSC 10-year risk model, 
+our pure image model (without risk factors), and is also superior to 
+other SOTA methods at 5-year AUC in various screening cohorts. 
+Furthermore, MTP-BCR provides unilateral breast-level predictions with 
+AUCs up to 0.81 and 0.77 for 5-year and 10-year risk assessments, respectively. 
+The validation on the public CSAW-CC dataset demonstrates the consistent 
+advantage of our multi-time point-based model compared to the single-time 
+point-based method. For the prediction of breast cancer recurrence, 
+our MTP-BCR obtains a 5-year AUC of 0.71 which also surpasses other methods. 
+The heatmaps derived from our model may help clinicians better understand the 
+progression from normal tissue to cancerous growth, enhancing interpretability 
+in breast cancer risk assessment.
+
+
+
+![Graphical abstract](figures/graphical_abstract.png)
 
 ## Usage
+
+### Requirements:
+
+* pytorch
+* numpy
+* pandas
+* scikit-learn
+* ...
+
 ### Environment
 ```bash
-conda env create -f py37_environment.yml
+conda env create -f py37_environment.yml  # don't forget to change the path
 conda activate py37
 ```
 
